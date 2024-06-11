@@ -91,6 +91,16 @@ tnf +
   theme(axis.text.x = element_blank(),
         axis.text.y = element_blank())
 
+# PREFERIMOS REALIZAR LOS MAPAS EN QGIS, exportamos .shp
+if (!requireNamespace("sf", quietly = TRUE)) {
+  install.packages("sf")
+}
+library(sf)
+
+# Dataframe "limpio"
+combined_data_clean_sf <- st_as_sf(combined_data_clean, coords = c("longitud", "latitud"), crs = 4326)
+st_write(combined_data_clean_sf, "C:/Users/andre/OneDrive/Escritorio/Tenerife/combined_data_clean3.shp")
+
 
 
 # Aplicamos K-Means con el número óptimo de clusters (otro ejemplo con 4 clusters)
@@ -135,3 +145,14 @@ tnf +
   theme(axis.text.x = element_blank(),
         axis.text.y = element_blank())
 
+
+
+# PREFERIMOS REALIZAR LOS MAPAS EN QGIS, exportamos .shp
+if (!requireNamespace("sf", quietly = TRUE)) {
+  install.packages("sf")
+}
+library(sf)
+
+# Dataframe "limpio"
+combined_data_clean_sf <- st_as_sf(combined_data_clean, coords = c("longitud", "latitud"), crs = 4326)
+st_write(combined_data_clean_sf, "C:/Users/andre/OneDrive/Escritorio/Tenerife/combined_data_clean.shp")
