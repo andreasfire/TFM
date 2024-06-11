@@ -26,7 +26,7 @@ df <- na.omit(df)
 df_dummy <- dummyVars("~ .", data = df, fullRank = TRUE)
 df <- data.frame(predict(df_dummy, newdata = df))
 
-# Aseguramos de que la columna objetivo se llama 'card_yes'
+# Tomamos la columna objetivo (la capital de la isla)
 
 target_column <- 'municipio_nombreSanta.Cruz.de.Tenerife'
 
